@@ -1,3 +1,16 @@
+---
+title: 元数据规则
+type: skill-reference
+status: active
+version: "1.0"
+date: 2026-09-07
+audience:
+  - 写作 Agent
+  - 人类作者
+related:
+  - references/render-contract.md
+---
+
 # 元数据规则
 
 本参考规定 Markdown 文档的元数据标记方式，是「多属性内容必用元数据」规则的实施细则。配合 [MarkdownQLite 渲染契约](render-contract.md) 使用；frontmatter 的渲染行为以该契约为准。

@@ -1,3 +1,15 @@
+---
+title: 上游跟踪与合并
+type: upstream-manifest
+status: active
+date: 2026-09-07
+upstream:
+  skill: tech-doc-style-chinese
+  author: Fenng
+  license: MIT
+  snapshot_date: 2026-09-07
+---
+
 # UPSTREAM.md — 上游跟踪与合并
 
 本仓库是 `tech-doc-style-chinese` 的衍生分支。本文件记录上游快照与合并流程，使分支与上游的增量始终可辨、可再合并。

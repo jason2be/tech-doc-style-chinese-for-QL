@@ -1,3 +1,16 @@
+---
+title: "Chinese Tech Doc Style — MarkdownQLite 衍生版（tech-doc-style-chinese-for-QL）"
+type: readme
+status: active
+date: 2026-09-07
+upstream:
+  skill: tech-doc-style-chinese
+  author: Fenng
+  license: MIT
+license: MIT
+install: "ln -s 本仓库 ~/.agents/skills/tech-doc-style-chinese-for-ql"
+---
+
 # Chinese Tech Doc Style — MarkdownQLite 衍生版（tech-doc-style-chinese-for-QL）
 
 > **分支说明**：本仓库是 `tech-doc-style-chinese` 的衍生分支，上游作者 Fenng（GitHub：@Fenng），MIT License。上游内容原样保留：下方说明文字、`SKILL.md` 继承部分、`references/` 既有参考、`scripts/`、`tests/`。本分支追加「MarkdownQLite 渲染契约输出补丁」（`references/render-contract.md`），使按本技能产出的 Markdown 文档都能在 MarkdownQLite 或兼容渲染器中正确渲染。对上游的改动清单与上游更新合并流程见 [UPSTREAM.md](UPSTREAM.md)。

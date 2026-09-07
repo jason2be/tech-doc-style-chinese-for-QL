@@ -1,3 +1,22 @@
+---
+title: MarkdownQLite 渲染契约（输出补丁）
+type: render-contract
+status: active
+version: "1.1"
+date: 2026-09-07
+updated: 2026-09-07
+audience:
+  - 写作 Agent
+  - 人类作者
+source:
+  authoritative: MarkdownQLite 仓库 docs/render-spec.md
+  authoritative_version: "0.1"
+sync:
+  copies:
+    - tech-doc-style-chinese-for-QL/references/render-contract.md
+    - markdownqlite-md-writing-guide/references/render-contract.md
+---
+
 # MarkdownQLite 渲染契约（输出补丁）
 
 > **权威源**：MarkdownQLite 仓库 `docs/render-spec.md`（v0.1，2026-09-07；从渲染代码逐条提取，每条标注代码出处与测试名）。
@@ -157,13 +176,21 @@ navigation:
 
 ## 8. wikilink 与链接
 
-wikilink 模板：
+wikilink 模板（逐行可照抄）：
 
 ~~~markdown
-- [[03-advanced-metadata]]      → 同目录存在的 md 文件 → 应用内打开
-- [[锚点演示二]]                → 同文档标题（含后文定义的标题）→ 页内跳转
-- [[不存在的目标]]              → 保持 [[…]] 字面原样
+- [[03-advanced-metadata]]
+- [[锚点演示二]]
+- [[不存在的目标]]
 ~~~
+
+三种写法的解析结果：
+
+| 写法 | 解析结果 |
+| --- | --- |
+| `[[同目录文件名]]` | 同目录 `name.md` 真实存在 → 应用内打开该文件 |
+| `[[同文档标题]]` | 页内锚点跳转，后文定义的标题也能命中 |
+| `[[无匹配文本]]` | 保持 `[[…]]` 字面原样 |
 
 - 解析优先级：同文档标题（大小写/变音折叠、去空白匹配）→ 同目录 `name.md` 实存文件 → 保留字面。
 - 不支持 `[[name|alias]]` 别名写法，`|` 会留在名字里。
@@ -239,7 +266,7 @@ $$
 | --- | --- | --- |
 | 裸域名 URL | 不成链，纯文本 | 写全 `https://…` |
 | 单 `~` 删除线 | 字面文本 | 用 `~~…~~` |
-| `[[name|alias]]` | `|` 留在名字里 | 用 wikilink + 正文说明 |
+| `[[name\|alias]]` | 竖线留在名字里 | 用 wikilink + 正文说明 |
 | Mermaid / mindmap 围栏 | 代码块原文，不渲染图 | 文字描述 + 代码块 |
 | `@directive` 块指令 | 不解析，普通文本 | 不使用 |
 | frontmatter 对象数组 / block scalar | 逐行降级 | 平铺键或 `- ` 列表 |
@@ -252,6 +279,6 @@ $$
 
 ## 同步
 
-- 权威源（MarkdownQLite `docs/render-spec.md`）更新后，同步本文件对应章节，并更新本文件头部的权威源版本与日期。
-- 本文件在两个仓库各有一份副本（`tech-doc-style-chinese-for-QL` 与 `markdownqlite-md-writing-guide`），同步时两份一起更新。
+- 权威源（MarkdownQLite `docs/render-spec.md`）更新后，同步本文件对应章节，并更新本文件头部 frontmatter 的 `source.authoritative_version` 与 `updated`。
+- 本文件在两个仓库各有一份副本（`tech-doc-style-chinese-for-QL` 与 `markdownqlite-md-writing-guide`），同步时两份一起更新，保持 SHA-256 一致。
 - 代码渲染行为变化时：先改权威源（以代码为准），再同步本文件，最后判断 SKILL.md 输出补丁是否需要跟进。
