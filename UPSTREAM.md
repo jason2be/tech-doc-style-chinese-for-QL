@@ -31,7 +31,7 @@ upstream:
 | `references/render-contract.md` | 新建 | 忠实于 MarkdownQLite 渲染代码的渲染契约与输出补丁 |
 | `references/metadata-rules.md` | 新建 | frontmatter 元数据规则细则 |
 | `LICENSE` | 追加 | 衍生版权行 |
-| `README.md` | 追加 | 分支说明 |
+| `README.md` | 追加+改写 | 分支说明与安装/结构文档；本表只列分支动机，改动以 git 历史为准 |
 | `UPSTREAM.md` | 新建 | 本文件 |
 | `agents.md` | 新建 | 本仓库 Agent 约定 |
 | `.gitignore` | 新增 | 忽略 `.DS_Store` |

@@ -265,7 +265,15 @@ $$
 
 ## 12. 表格与代码块
 
-GFM 管道表格受支持，对齐行照标准写法（`| :--- | :---: | ---: |`）；跨行/跨列用 raw HTML 表格，`th`/`td` 允许 `rowspan`/`colspan`/`align` 属性。
+GFM 管道表格受支持，对齐行照标准写法（`| :--- | :---: | ---: |`）；跨行/跨列用 raw HTML 表格，`th`/`td` 允许 `rowspan`/`colspan`/`align` 属性。最小模板：
+
+```html
+<table>
+  <tr><th rowspan="2">表头</th><th>表头</th></tr>
+  <tr><td>表头</td></tr>
+  <tr><td>单元格</td><td>单元格</td></tr>
+</table>
+```
 
 围栏代码块可在开栏围栏后标注语言（如 `swift`），预览按 `language-*` 类名高亮；语言名只保留字母、数字、`-`、`_`。
 

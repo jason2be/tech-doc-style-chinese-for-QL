@@ -34,8 +34,8 @@ install: 'ln -s "$(pwd)" ~/.agents/skills/tech-doc-style-chinese-for-ql'
 # 方式一：软链本仓库
 ln -s "$(pwd)" ~/.agents/skills/tech-doc-style-chinese-for-ql
 
-# 方式二：克隆仓库到技能目录（<公开 URL> 待公开发布后替换）
-git clone <公开 URL> ~/.agents/skills/tech-doc-style-chinese-for-ql
+# 方式二（公开发布后启用）：克隆仓库到技能目录
+# git clone <公开 URL> ~/.agents/skills/tech-doc-style-chinese-for-ql
 ```
 
 安装后校验：
@@ -112,7 +112,7 @@ tech-doc-style-chinese-for-QL/
 - `NoCode-Skill.md`：对外说明稿，适合公开阅读和分享
 - `README.md`：仓库首页说明
 - `UPSTREAM.md`：上游快照哈希与合并流程
-- `agents.md`：本仓库 Agent 甾定
+- `agents.md`：本仓库 Agent 约定
 - `agents/openai.yaml`：技能展示元数据
 - `references/render-contract.md`：MarkdownQLite 渲染契约（本分支新增）
 - `references/metadata-rules.md`：frontmatter 元数据规则（本分支新增）
