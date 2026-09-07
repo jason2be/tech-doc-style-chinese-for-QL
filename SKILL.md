@@ -127,7 +127,7 @@ description: 在撰写、改写、校对或审阅 Markdown 文档时使用，尤
 - frontmatter 只能位于文件最前：首行恰为 `---`、有闭合行 `---`、中间至少一行非空内容（识别条件见契约第 1 节）。不使用 frontmatter 时，文档开头不要写 `---` 行——满足识别条件的开头块会被当作 frontmatter 摘除，不渲染为分隔线。frontmatter 中恰为 `true`/`false` 的值渲染为复选框（非表单控件）。
 - `[TOC]` 生成目录，标题层级决定目录与侧边栏大纲结构。
 
-完整契约、代码出处与不支持行为清单见 [MarkdownQLite 渲染契约](references/render-contract.md)。
+完整契约与不支持行为清单见 [MarkdownQLite 渲染契约](references/render-contract.md)；代码出处与测试名在权威源（见契约头部说明）。
 
 ## 按内容类型处理
 
