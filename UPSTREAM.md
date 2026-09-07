@@ -19,7 +19,8 @@ upstream:
 - 上游技能：`tech-doc-style-chinese`（中文技术文档与产品文案规范）
 - 上游作者：Fenng（GitHub：@Fenng）
 - 上游许可：MIT License（见 LICENSE 上半部分）
-- 上游本机位置：`~/.agents/skills/tech-doc-style-chinese/`
+- 上游公开仓库：https://github.com/Fenng/tech-doc-style-chinese
+- 上游本机位置：`~/.agents/skills/tech-doc-style-chinese/`（本机合并流程约定）
 - 快照日期：2026-09-07
 
 ## 分支增量（本仓库对上游的改动）
@@ -33,8 +34,9 @@ upstream:
 | `README.md` | 追加 | 分支说明 |
 | `UPSTREAM.md` | 新建 | 本文件 |
 | `agents.md` | 新建 | 本仓库 Agent 约定 |
+| `.gitignore` | 新增 | 忽略 `.DS_Store` |
 
-上游文件（`SKILL.md` 之外的继承部分、`references/` 既有四个文件、`agents/`、`scripts/`、`tests/`、`NoCode-Skill.md`）保持原样，未做修改。
+上游文件（`NoCode-Skill.md`、`agents/`、`scripts/`、`tests/`、`references/` 既有四个文件）保持原样，未做修改；`.github/` 未随导入快照带入本仓库。`README.md` 与 `LICENSE` 在上游文本基础上追加分支内容（见上表）；`.gitignore` 为本分支新增。
 
 ## 上游快照哈希（2026-09-07）
 

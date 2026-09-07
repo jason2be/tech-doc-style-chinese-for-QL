@@ -8,7 +8,7 @@ upstream:
   author: Fenng
   license: MIT
 license: MIT
-install: "ln -s 本仓库 ~/.agents/skills/tech-doc-style-chinese-for-ql"
+install: 'ln -s "$(pwd)" ~/.agents/skills/tech-doc-style-chinese-for-ql'
 ---
 
 # Chinese Tech Doc Style — MarkdownQLite 衍生版（tech-doc-style-chinese-for-QL）
@@ -25,6 +25,24 @@ install: "ln -s 本仓库 ~/.agents/skills/tech-doc-style-chinese-for-ql"
 - 文档首页、解决方案页、接口说明页、FAQ 的信息密度和结构经常失衡
 
 如果需要一套适合中文技术文档的基础写作规范，这份 Skill 可以直接拿来使用，或是作为参考。
+
+## 安装本分支
+
+在本仓库根目录执行其一：
+
+```bash
+# 方式一：软链本仓库
+ln -s "$(pwd)" ~/.agents/skills/tech-doc-style-chinese-for-ql
+
+# 方式二：克隆仓库到技能目录（<公开 URL> 待公开发布后替换）
+git clone <公开 URL> ~/.agents/skills/tech-doc-style-chinese-for-ql
+```
+
+安装后校验：
+
+```bash
+test -f ~/.agents/skills/tech-doc-style-chinese-for-ql/SKILL.md && echo "installed"
+```
 
 ## 适用场景
 
@@ -64,32 +82,43 @@ install: "ln -s 本仓库 ~/.agents/skills/tech-doc-style-chinese-for-ql"
 ## 仓库结构
 
 ```text
-tech-doc-style-chinese/
+tech-doc-style-chinese-for-QL/
 ├── SKILL.md
 ├── NoCode-Skill.md
 ├── README.md
+├── UPSTREAM.md
+├── agents.md
+├── LICENSE
+├── .gitignore
 ├── agents/
 │   └── openai.yaml
 ├── references/
 │   ├── api-status-copy.md
 │   ├── controlled-technical-chinese.md
 │   ├── project-overrides-example.md
-│   └── terminology-and-typography.md
+│   ├── terminology-and-typography.md
+│   ├── render-contract.md
+│   └── metadata-rules.md
 ├── scripts/
 │   └── lint_copy_rules.py
 └── tests/
-    └── test_lint_copy_rules.py
+    ├── test_lint_copy_rules.py
+    └── test_skill_structure.py
 ```
 
 各文件的作用：
 
 - `SKILL.md`：正式技能入口，供 Codex、Claude Code 等 Agent 使用
 - `NoCode-Skill.md`：对外说明稿，适合公开阅读和分享
-- `README.md`：GitHub 仓库首页说明
+- `README.md`：仓库首页说明
+- `UPSTREAM.md`：上游快照哈希与合并流程
+- `agents.md`：本仓库 Agent 甾定
 - `agents/openai.yaml`：技能展示元数据
-- `references/`：按任务读取的详细规则和项目覆盖模板
+- `references/render-contract.md`：MarkdownQLite 渲染契约（本分支新增）
+- `references/metadata-rules.md`：frontmatter 元数据规则（本分支新增）
+- `references/` 其余四个文件：上游继承的详细规则和项目覆盖模板
 - `scripts/lint_copy_rules.py`：轻量检查器
-- `tests/test_lint_copy_rules.py`：检查器回归测试
+- `tests/`：检查器与仓库结构回归测试
 
 ## 如何在 Codex 中使用
 
@@ -274,7 +303,7 @@ python scripts/lint_copy_rules.py --strict SKILL.md references/
 python -m unittest discover -s tests -v
 ```
 
-GitHub Actions 配置文件为 `.github/workflows/skill-lint.yml`，会在 `pull_request` 和 `main` 分支 `push` 时自动运行。
+上游仓库带 `.github/workflows/skill-lint.yml` CI；本仓库当前未包含该配置，本地校验用上文命令。
 
 ## 发布建议
 
@@ -288,8 +317,6 @@ GitHub Actions 配置文件为 `.github/workflows/skill-lint.yml`，会在 `pull
 - 保留 `SKILL.md`
 - 保留 `agents/openai.yaml`
 - 在仓库里明确目录结构和安装方式
-
-<!-- 作者：Fenng（GitHub：@Fenng） -->
 
 ## License
 

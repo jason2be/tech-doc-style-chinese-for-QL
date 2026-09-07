@@ -1,6 +1,6 @@
 # tech-doc-style-chinese-for-QL — Agent 入口
 
-本仓库是 `tech-doc-style-chinese`（作者 Fenng，MIT License）的衍生分支：中文 Markdown 写作规范 + MarkdownQLite 渲染契约输出补丁。分支定位与上游快照见 `UPSTREAM.md`；渲染契约的事实来源是 MarkdownQLite 渲染代码（`/Users/iason/Projects/MarkdownQLite` 的 `Core/MarkdownQLBase` 等）。
+本仓库是 `tech-doc-style-chinese`（作者 Fenng，MIT License）的衍生分支：中文 Markdown 写作规范 + MarkdownQLite 渲染契约输出补丁。分支定位与上游快照见 `UPSTREAM.md`；渲染契约的权威链：MarkdownQLite 渲染代码 → `docs/render-spec.md`（权威源）→ 本仓库 `references/render-contract.md`。
 
 ## 参考项目仓库（_references）
 
